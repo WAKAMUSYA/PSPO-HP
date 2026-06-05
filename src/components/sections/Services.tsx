@@ -5,36 +5,36 @@ import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
 
 const sectionConfig: Record<string, any> = {
-  exercise: { 
-    bg: 'bg-[#FAF9F6]', 
-    textColor: 'text-[#e60012]', 
+  exercise: {
+    bg: 'bg-[#FAF9F6]',
+    textColor: 'text-[#e60012]',
     svgColor: 'text-[#FAF9F6]',
     cardBg: 'bg-white',
     descColor: 'text-slate-600',
     titleColor: 'text-slate-800',
     buttonClass: 'border-[#e60012] text-[#e60012] hover:bg-[#e60012] hover:text-white',
   },
-  work: { 
-    bg: 'bg-[#E6F3FF]', 
-    textColor: 'text-[#3587c6]', 
+  work: {
+    bg: 'bg-[#E6F3FF]',
+    textColor: 'text-[#3587c6]',
     svgColor: 'text-[#E6F3FF]',
     cardBg: 'bg-white',
     descColor: 'text-slate-600',
     titleColor: 'text-slate-800',
     buttonClass: 'border-[#3587c6] text-[#3587c6] hover:bg-[#3587c6] hover:text-white',
   },
-  condition: { 
-    bg: 'bg-[#F0FFF4]', 
-    textColor: 'text-[#10b981]', 
+  condition: {
+    bg: 'bg-[#F0FFF4]',
+    textColor: 'text-[#10b981]',
     svgColor: 'text-[#F0FFF4]',
     cardBg: 'bg-white',
     descColor: 'text-slate-600',
     titleColor: 'text-slate-800',
     buttonClass: 'border-[#10b981] text-[#10b981] hover:bg-[#10b981] hover:text-white',
   },
-  relax: { 
-    bg: 'bg-[#1d70b8]', 
-    textColor: 'text-white', 
+  relax: {
+    bg: 'bg-[#1d70b8]',
+    textColor: 'text-white',
     svgColor: 'text-[#1d70b8]',
     cardBg: 'bg-white/10 backdrop-blur-md border border-white/20',
     descColor: 'text-blue-100',
@@ -46,7 +46,7 @@ const sectionConfig: Record<string, any> = {
 // Stylish diagonal divider generator
 const SharpDivider = ({ color, flip = false }: { color: string, flip?: boolean }) => (
   <div className={`absolute left-0 w-full z-10 -translate-y-[99%] ${color}`} style={{ top: 0, height: '6vw', minHeight: '40px' }}>
-    <div className="w-full h-full bg-current" style={{ 
+    <div className="w-full h-full bg-current" style={{
       clipPath: flip ? 'polygon(100% 0, 0 100%, 100% 100%)' : 'polygon(0 0, 0 100%, 100% 100%)'
     }} />
   </div>
@@ -64,19 +64,67 @@ function CategorySection({ category, index }: { category: typeof serviceTabs[0],
   };
 
   return (
-    <div className={`relative pt-20 md:pt-32 pb-24 ${conf.bg}`}>
+    <div className={`relative pt-20 md:pt-32 pb-24 ${conf.bg} overflow-hidden`}>
+      {/* Background Image for Exercise Section */}
+      {category.id === 'exercise' && (
+        <div className="absolute inset-0 z-0 opacity-15 pointer-events-none mix-blend-multiply">
+          <Image
+            src="/image/パーソナル/pt2.jpg"
+            alt="Exercise Background"
+            fill
+            className="object-cover"
+          />
+        </div>
+      )}
+
+      {/* Background Image for Work Section */}
+      {category.id === 'work' && (
+        <div className="absolute inset-0 z-0 opacity-10 pointer-events-none mix-blend-multiply">
+          <Image
+            src="/image/cafe/cafe8.jpg"
+            alt="Work Background"
+            fill
+            className="object-cover"
+          />
+        </div>
+      )}
+
+      {/* Background Image for Condition Section */}
+      {category.id === 'condition' && (
+        <div className="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-multiply">
+          <Image
+            src="/image/整える/sauna3.jpg"
+            alt="Condition Background"
+            fill
+            className="object-cover"
+          />
+        </div>
+      )}
+
+      {/* Background Image for Relax Section */}
+      {category.id === 'relax' && (
+        <div className="absolute inset-0 z-0 opacity-10 pointer-events-none mix-blend-overlay">
+          <Image
+            src="/image/cafe/cafe2.jpg"
+            alt="Relax Background"
+            fill
+            className="object-cover"
+          />
+        </div>
+      )}
+
       {/* Add sharp diagonal divider if it's not the first section */}
       {index > 0 && <SharpDivider color={conf.svgColor} flip={isEven} />}
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-        
+
         {/* Category Header */}
         <div className={`flex flex-col gap-8 mb-12 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
           <div className="w-full md:w-2/3 h-64 md:h-[400px] relative rounded-xl overflow-hidden shadow-2xl">
-            <Image 
-              src={category.image} 
-              alt={category.title} 
-              fill 
+            <Image
+              src={category.image}
+              alt={category.title}
+              fill
               className="object-cover hover:scale-105 transition-transform duration-700"
             />
             {/* The overlapping title tab (シャープでスタイリッシュ) */}
@@ -86,7 +134,7 @@ function CategorySection({ category, index }: { category: typeof serviceTabs[0],
               </h3>
             </div>
           </div>
-          
+
           <div className={`w-full md:w-1/3 flex flex-col justify-center ${isEven ? 'items-start md:pl-4' : 'items-end md:pr-4'}`}>
             <button className={`inline-flex items-center px-8 py-3 rounded-none border-2 ${conf.buttonClass} transition-all duration-300 font-bold group shadow-sm hover:shadow-md mt-4 md:mt-0`} style={{ transform: 'skewX(-5deg)' }}>
               <span style={{ transform: 'skewX(5deg)' }} className="flex items-center">
@@ -99,27 +147,27 @@ function CategorySection({ category, index }: { category: typeof serviceTabs[0],
 
         {/* Horizontal Carousel for Services */}
         <div className="relative group/carousel mt-8">
-          <div 
+          <div
             ref={scrollRef}
             className="flex overflow-x-auto space-x-6 pb-8 snap-x snap-mandatory hide-scrollbar pl-4 md:pl-0"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {category.services.map((service, idx) => (
-              <a 
-                key={idx} 
+              <a
+                key={idx}
                 href="#"
                 className={`flex-shrink-0 w-[280px] sm:w-[320px] snap-start flex flex-col rounded-xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden ${conf.cardBg}`}
               >
                 {/* Image */}
                 <div className="relative h-48 w-full bg-slate-100 overflow-hidden">
-                  <Image 
-                    src={service.image} 
-                    alt={service.name} 
-                    fill 
+                  <Image
+                    src={service.image}
+                    alt={service.name}
+                    fill
                     className="object-cover hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                
+
                 {/* Text Content */}
                 <div className="p-6 flex flex-col flex-grow">
                   <h4 className={`text-xl font-bold mb-3 ${conf.titleColor}`}>
@@ -128,7 +176,7 @@ function CategorySection({ category, index }: { category: typeof serviceTabs[0],
                   <p className={`text-sm leading-relaxed whitespace-pre-line flex-grow mb-6 line-clamp-3 ${conf.descColor}`}>
                     {service.desc}
                   </p>
-                  
+
                   {/* Link action */}
                   <div className={`mt-auto flex items-center text-sm font-bold ${conf.textColor} ${conf.titleColor === 'text-white' ? 'text-white' : ''}`}>
                     詳しくはこちら <ChevronRight size={16} className="ml-1" />
@@ -139,7 +187,7 @@ function CategorySection({ category, index }: { category: typeof serviceTabs[0],
           </div>
 
           {/* Right Scroll Arrow */}
-          <button 
+          <button
             onClick={scrollRight}
             className={`hidden md:flex opacity-0 group-hover/carousel:opacity-100 absolute -right-6 top-[40%] -translate-y-1/2 w-14 h-14 bg-white border border-slate-200 text-slate-600 hover:text-brand-navy hover:border-brand-navy rounded-full items-center justify-center shadow-xl transition-all hover:scale-105 z-10 focus:outline-none`}
             aria-label="Next items"
@@ -173,7 +221,8 @@ export function Services() {
         ))}
       </div>
 
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .hide-scrollbar::-webkit-scrollbar {
           display: none;
         }
