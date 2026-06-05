@@ -2,75 +2,69 @@ import React from 'react';
 import Image from 'next/image';
 
 export function Concept() {
+  const sliderImages = [
+    '/image/zimu7.jpg',
+    '/image/golf/golf5.jpg',
+    '/image/study1.jpg',
+    '/image/cafe/cafe8.jpg',
+    '/image/パーソナル/pt1.jpg',
+    '/image/p-yoga/yoga5.jpg'
+  ];
+
   return (
-    <section id="about" className="py-24 md:py-32 bg-gradient-to-b from-white to-slate-50 overflow-hidden relative">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#1d70b8]/5 skew-x-12 translate-x-32 z-0" />
+    <section id="about" className="py-16 md:py-24 bg-[#3587c6] overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white mb-10 md:mb-16 relative z-10">
+        <h2 className="text-3xl md:text-6xl font-black mb-4 md:mb-8 tracking-widest drop-shadow-md">
+          THIS IS P・SPO
+        </h2>
+        <p className="text-xl md:text-4xl font-bold mb-4 md:mb-8 leading-snug drop-shadow-sm">
+          ただのジムじゃない。<br className="md:hidden" />
+          あなたの「やりたい」が<br />
+          すべて叶うサードプレイス。
+        </p>
+        <p className="text-xs md:text-base font-medium max-w-2xl mx-auto leading-relaxed opacity-90 drop-shadow-sm">
+          24時間の本格フィットネスから、仕事に集中できるカフェスペース、<br className="hidden md:block" />
+          心身を癒やすサウナやシミュレーションゴルフまで。<br />
+          定額ですべてが使い放題の「複合エンターテインメント空間」です。
+        </p>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-
-          {/* Text Content */}
-          <div className="lg:w-1/2 space-y-8">
-            <div className="inline-block px-4 py-1.5 rounded-full bg-[#1d70b8]/10 border border-[#1d70b8]/20 text-[#1d70b8] font-bold tracking-widest text-sm mb-2 shadow-sm">
-              CONCEPT
+      {/* Infinite Image Slider */}
+      <div className="relative w-full mt-8 md:mt-12 flex overflow-hidden">
+        <div className="flex animate-marquee space-x-3 md:space-x-6 px-1 md:px-3">
+          {[...sliderImages, ...sliderImages].map((src, idx) => (
+            <div key={idx} className="relative w-[200px] h-[150px] md:w-[400px] md:h-[280px] flex-shrink-0 rounded-2xl overflow-hidden shadow-2xl">
+              <Image 
+                src={src} 
+                alt={`P-SPO image ${idx}`} 
+                fill 
+                className="object-cover hover:scale-110 transition-transform duration-700" 
+              />
             </div>
-
-            <h2 className="text-5xl md:text-7xl font-black text-slate-900 leading-[1.1] tracking-tighter">
-              THIS IS<br />
-              <span className="text-[#3587c6] drop-shadow-sm">P・SPO</span>
-            </h2>
-
-            <p className="text-2xl md:text-3xl font-bold text-slate-800 leading-snug">
-              ただのジムじゃない。<br />
-              あなたの「やりたい」が<br className="hidden md:block" />
-              すべて叶うサードプレイス。
-            </p>
-
-            <p className="text-lg text-slate-600 leading-relaxed max-w-lg font-medium">
-              24時間の本格フィットネスはもちろん、仕事に集中できるカフェスペース、心身を癒やすサウナ・温泉、そしてシミュレーションゴルフからカラオケまで。
-              <br /><br />
-              月額定額で、これらすべての施設が使い放題。P・SPOは、あなたの毎日のライフスタイルを拡張し、新しい可能性を引き出す「大人のための複合エンターテインメント空間」です。
-            </p>
-
-            {/* Stats / Features */}
-            <div className="grid grid-cols-2 gap-8 pt-6 border-t border-slate-200">
-              <div className="border-l-4 border-[#e60012] pl-4">
-                <p className="text-4xl font-black text-slate-900 tracking-tighter">83<span className="text-xl text-slate-500 font-bold ml-1">店舗</span></p>
-                <p className="text-sm text-slate-600 font-bold mt-1">県内最大級のネットワーク</p>
-              </div>
-              <div className="border-l-4 border-[#f39800] pl-4">
-                <p className="text-4xl font-black text-slate-900 tracking-tighter">24<span className="text-xl text-slate-500 font-bold ml-1">時間</span></p>
-                <p className="text-sm text-slate-600 font-bold mt-1">いつでも好きな時に</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Visual Grid (Overlapping Images) */}
-          <div className="lg:w-1/2 relative h-[550px] md:h-[750px] w-full mt-12 lg:mt-0">
-            {/* Soft glowing blob behind images */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#3587c6]/10 rounded-full blur-3xl z-0" />
-
-            {/* Gym */}
-            <div className="absolute top-0 right-0 md:right-0 w-64 h-48 md:w-[480px] md:h-[320px] rounded-2xl overflow-hidden shadow-2xl z-20 hover:-translate-y-2 transition-transform duration-500">
-              <Image src="/image/zimu7.jpg" alt="P-SPO Gym" fill className="object-cover hover:scale-110 transition-transform duration-700" />
-            </div>
-
-            {/* Golf */}
-            <div className="absolute top-36 left-0 md:top-48 md:-left-8 w-64 h-56 md:w-[380px] md:h-[320px] rounded-2xl overflow-hidden shadow-2xl z-30 border-4 border-white hover:-translate-y-2 transition-transform duration-500">
-              <Image src="/image/golf/golf5.jpg" alt="P-SPO Golf" fill className="object-cover hover:scale-110 transition-transform duration-700" />
-            </div>
-
-            {/* Study */}
-            <div className="absolute bottom-4 right-8 md:bottom-8 md:right-8 w-64 h-48 md:w-[420px] md:h-[280px] rounded-2xl overflow-hidden shadow-xl z-10 hover:-translate-y-2 transition-transform duration-500">
-              {/* Optional overlay color for aesthetic */}
-              <div className="absolute inset-0 bg-brand-navy/10 z-10 mix-blend-overlay" />
-              <Image src="/image/study1.jpg" alt="P-SPO Study" fill className="object-cover hover:scale-110 transition-transform duration-700" />
-            </div>
-          </div>
-
+          ))}
         </div>
       </div>
+      
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-50% - 0.75rem)); }
+        }
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
+        }
+        @media (min-width: 768px) {
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 1.5rem)); }
+          }
+          .animate-marquee {
+            animation: marquee 50s linear infinite;
+          }
+        }
+        `
+      }} />
     </section>
   );
 }

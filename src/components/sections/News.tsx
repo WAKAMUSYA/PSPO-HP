@@ -14,26 +14,26 @@ export function News() {
   };
 
   return (
-    <section id="news" className="py-20 bg-white relative overflow-hidden">
+    <section id="news" className="pt-8 pb-12 md:py-20 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-black text-brand-navy">新着・キャンペーン</h2>
+        <div className="text-center mb-6 md:mb-12">
+          <h2 className="text-xl md:text-3xl font-black text-brand-navy">新着・キャンペーン</h2>
         </div>
 
         <div className="relative">
           {/* Scroll Container */}
           <div 
             ref={scrollContainerRef}
-            className="flex space-x-6 overflow-x-auto pb-8 snap-x snap-mandatory hide-scrollbar"
+            className="flex space-x-4 md:space-x-6 overflow-x-auto pb-8 snap-x snap-mandatory hide-scrollbar pl-4 md:pl-0"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {news.map((item) => (
               <div 
                 key={item.id} 
-                className="flex-shrink-0 w-[280px] sm:w-[320px] snap-start flex flex-col bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow"
+                className="flex-shrink-0 w-[150px] sm:w-[200px] md:w-[320px] snap-start flex flex-col bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow"
               >
                 {/* Image */}
-                <div className="relative h-[200px] w-full bg-slate-100">
+                <div className="relative h-[100px] md:h-[200px] w-full bg-slate-100">
                   <Image 
                     src={item.image} 
                     alt={item.title} 
@@ -43,14 +43,14 @@ export function News() {
                 </div>
                 
                 {/* Content */}
-                <div className="p-5 flex flex-col flex-grow">
-                  <span className="text-xs font-bold text-slate-500 mb-2 block">
+                <div className="p-3 md:p-5 flex flex-col flex-grow">
+                  <span className="text-[10px] md:text-xs font-bold text-slate-500 mb-1 block">
                     {item.category}
                   </span>
-                  <h3 className="text-[15px] font-bold text-slate-900 leading-snug mb-4 flex-grow">
+                  <h3 className="text-xs sm:text-sm md:text-[15px] font-bold text-slate-900 leading-snug mb-2 md:mb-4 flex-grow line-clamp-2">
                     {item.title}
                   </h3>
-                  <div className="text-xs text-slate-500 mb-6 line-clamp-2">
+                  <div className="text-[10px] md:text-xs text-slate-500 mb-2 md:mb-6 line-clamp-1 md:line-clamp-2">
                     {item.period}
                   </div>
                   <a href="#" className="text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors mt-auto inline-block">

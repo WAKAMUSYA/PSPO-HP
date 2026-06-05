@@ -138,7 +138,7 @@ function CategorySection({ category, index }: { category: typeof serviceTabs[0],
           <div className={`w-full md:w-1/3 flex flex-col justify-center ${isEven ? 'items-start md:pl-4' : 'items-end md:pr-4'}`}>
             <button className={`inline-flex items-center px-8 py-3 rounded-none border-2 ${conf.buttonClass} transition-all duration-300 font-bold group shadow-sm hover:shadow-md mt-4 md:mt-0`} style={{ transform: 'skewX(-5deg)' }}>
               <span style={{ transform: 'skewX(5deg)' }} className="flex items-center">
-                {category.title}の施設一覧
+                {category.title}施設一覧
                 <ChevronRight size={20} className="ml-1 group-hover:translate-x-1 transition-transform" />
               </span>
             </button>
@@ -149,17 +149,17 @@ function CategorySection({ category, index }: { category: typeof serviceTabs[0],
         <div className="relative group/carousel mt-8">
           <div
             ref={scrollRef}
-            className="flex overflow-x-auto space-x-6 pb-8 snap-x snap-mandatory hide-scrollbar pl-4 md:pl-0"
+            className="flex overflow-x-auto space-x-3 md:space-x-6 pb-8 snap-x snap-mandatory hide-scrollbar pl-4 md:pl-0"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {category.services.map((service, idx) => (
               <a
                 key={idx}
                 href="#"
-                className={`flex-shrink-0 w-[280px] sm:w-[320px] snap-start flex flex-col rounded-xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden ${conf.cardBg}`}
+                className={`flex-shrink-0 w-[150px] sm:w-[200px] md:w-[320px] snap-start flex flex-col rounded-xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden ${conf.cardBg}`}
               >
                 {/* Image */}
-                <div className="relative h-48 w-full bg-slate-100 overflow-hidden">
+                <div className="relative h-28 md:h-48 w-full bg-slate-100 overflow-hidden">
                   <Image
                     src={service.image}
                     alt={service.name}
@@ -169,17 +169,17 @@ function CategorySection({ category, index }: { category: typeof serviceTabs[0],
                 </div>
 
                 {/* Text Content */}
-                <div className="p-6 flex flex-col flex-grow">
-                  <h4 className={`text-xl font-bold mb-3 ${conf.titleColor}`}>
+                <div className="p-3 md:p-6 flex flex-col flex-grow">
+                  <h4 className={`text-sm md:text-xl font-bold mb-1 md:mb-3 ${conf.titleColor} line-clamp-1`}>
                     {service.name}
                   </h4>
-                  <p className={`text-sm leading-relaxed whitespace-pre-line flex-grow mb-6 line-clamp-3 ${conf.descColor}`}>
+                  <p className={`text-[10px] md:text-sm leading-relaxed whitespace-pre-line flex-grow mb-3 md:mb-6 line-clamp-2 md:line-clamp-3 ${conf.descColor}`}>
                     {service.desc}
                   </p>
 
                   {/* Link action */}
-                  <div className={`mt-auto flex items-center text-sm font-bold ${conf.textColor} ${conf.titleColor === 'text-white' ? 'text-white' : ''}`}>
-                    詳しくはこちら <ChevronRight size={16} className="ml-1" />
+                  <div className={`mt-auto flex items-center text-[10px] md:text-sm font-bold ${conf.textColor} ${conf.titleColor === 'text-white' ? 'text-white' : ''}`}>
+                    詳しくはこちら <ChevronRight size={14} className="ml-1 md:w-4 md:h-4" />
                   </div>
                 </div>
               </a>
@@ -203,18 +203,6 @@ function CategorySection({ category, index }: { category: typeof serviceTabs[0],
 export function Services() {
   return (
     <section id="services" className="overflow-hidden">
-      <div className="bg-[#FAF9F6] pt-24 pb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-black text-brand-navy mb-6 tracking-tight">P・SPOでできること</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              ジムでのトレーニングはもちろん、カフェでの仕事、サウナでのリラックスまで。<br className="hidden sm:block" />
-              あなたのライフスタイルに合わせて、自由に組み合わせてご利用いただけます。
-            </p>
-          </div>
-        </div>
-      </div>
-
       <div className="flex flex-col">
         {serviceTabs.map((category, index) => (
           <CategorySection key={category.id} category={category} index={index} />
