@@ -1,5 +1,7 @@
 import { Hero } from '@/components/sections/Hero';
+import { StickyNav } from '@/components/layout/StickyNav';
 import { News } from '@/components/sections/News';
+import { Concept } from '@/components/sections/Concept';
 import { Enjoy } from '@/components/sections/Enjoy';
 import { Services } from '@/components/sections/Services';
 import { Features } from '@/components/sections/Features';
@@ -15,13 +17,19 @@ export default function Home() {
       {/* ①ファーストビュー */}
       <Hero />
       
+      {/* スクロール追従メニュー */}
+      <StickyNav />
+      
       {/* ②新着・キャンペーン */}
       <News />
       
-      {/* ③P・SPOでできること */}
+      {/* ③コンセプト（THIS IS P・SPO） */}
+      <Concept />
+      
+      {/* ④P・SPOでできること */}
       <Services />
       
-      {/* ④選ばれる理由 */}
+      {/* ⑤選ばれる理由 */}
       <Features />
       
       {/* ⑤料金 (Pricing & Options) */}

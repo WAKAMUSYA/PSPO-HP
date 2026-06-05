@@ -35,7 +35,7 @@ export const services = [
     icon: LocateFixed,
     color: 'text-emerald-600',
     bg: 'bg-emerald-50',
-    image: '/image/zimu5.jpg',
+    image: '/image/golf/golf1.jpg',
   },
   {
     id: 'spa',
@@ -73,52 +73,54 @@ export const serviceTabs = [
     image: '/image/zimu2.jpg',
     services: [
       { name: '24時間ジム', desc: '低価格なのに充実のラインナップ。\n愛媛県内と北海道1店舗の全店舗が利用可能。', image: '/image/zimu1.jpg' },
-      { name: 'シミュレーションゴルフ', desc: '月額内で利用可能。\n導入店舗も続々拡大中。', image: '/image/zimu5.jpg' },
-      { name: 'パーソナルトレーニング', desc: 'プロのトレーナーがマンツーマンでサポート。', image: '/image/zimu2.jpg' },
-      { name: 'バイオサーキット', desc: 'AIがあなたに最適な負荷を自動設定。', image: '/image/zimu2.jpg' },
-      { name: 'P・YOGA', desc: '心と身体のバランスを整えるヨガスタジオ。', image: '/image/zimu8.jpg' },
-      { name: 'P・STUDIO', desc: '多彩なスタジオプログラムを毎日開催。', image: '/image/zimu2.jpg' },
-      { name: 'マシンピラティス', desc: '専用マシンでインナーマッスルを効果的に鍛える。', image: '/image/zimu2.jpg' },
-      { name: 'ボルダリング', desc: '初心者から上級者まで楽しめる本格ウォール。', image: '/image/zimu2.jpg' },
+      { name: 'シミュレーションゴルフ', desc: '月額内で利用可能。\n導入店舗も続々拡大中。', image: '/image/golf/golf2.jpg' },
+      { name: 'パーソナルトレーニング', desc: 'プロのトレーナーがマンツーマンでサポート。', image: '/image/パーソナル/pt1.jpg' },
+      { name: 'バイオサーキット', desc: 'AIがあなたに最適な負荷を自動設定。', image: '/image/bio/bio.jpg' },
+      { name: 'P・YOGA', desc: '心と身体のバランスを整えるヨガスタジオ。', image: '/image/p-yoga/yoga1.jpg' },
+      { name: 'P・STUDIO', desc: '多彩なスタジオプログラムを毎日開催。', image: '/image/p-studio/studio1.jpg' },
+      { name: 'マシンピラティス', desc: '専用マシンでインナーマッスルを効果的に鍛える。', image: '/image/マシンピラティス/pira1.JPG' },
+      { name: 'ボルダリング', desc: '初心者から上級者まで楽しめる本格ウォール。', image: '/image/ボルダリング/boru1.jpg' },
     ]
   },
   {
     id: 'work',
     title: '学ぶ・集中する',
-    image: '/image/zimu3.jpg',
+    image: '/image/study.jpg',
     services: [
-      { name: 'STUDY ROOM', desc: '24時間利用可能な学習空間。\n学生から社会人まで利用できます。', image: '/image/zimu3.jpg' },
-      { name: 'Study+', desc: 'さらに集中を高めるプレミアムな自習スペース。', image: '/image/zimu3.jpg' },
-      { name: 'WEB個室ブース', desc: 'オンライン会議や面接にも対応した専用空間。', image: '/image/zimu3.jpg' },
-      { name: 'WORKS（コワーキング）', desc: '住所利用・登記も可能なコワーキングスペース。', image: '/image/zimu3.jpg' },
-      { name: 'レンタルルーム', desc: '打ち合わせやセミナーに便利な貸し会議室。', image: '/image/zimu3.jpg' },
+      { name: 'STUDY ROOM', desc: '24時間利用可能な学習空間。\n学生から社会人まで利用できます。', image: '/image/study/study5.jpg' },
+      { name: 'Study+', desc: 'さらに集中を高めるプレミアムな自習スペース。', image: '/image/study/studyplus.jpg' },
+      { name: 'WEB個室ブース', desc: 'オンライン会議や面接にも対応した専用空間。', image: '/image/study/webkaigi1.JPG' },
+      { name: 'WORKS（コワーキング）', desc: '住所利用・登記も可能なコワーキングスペース。', image: '/image/works/works4.jpg' },
+      { name: 'レンタルルーム', desc: '打ち合わせやセミナーに便利な貸し会議室。', image: '/image/works/Event.jpg' },
     ]
   },
   {
     id: 'condition',
     title: '整える',
-    image: '/image/zimu6.jpg',
+    image: '/image/整える/sauna2.jpg',
     services: [
-      { name: 'P・SPO SAUNA', desc: '愛媛初の24時間個室サウナ。', image: '/image/zimu6.jpg' },
-      { name: 'SPA P・SPO', desc: '天然温泉で心身の疲れを癒やすリラクゼーション。', image: '/image/zimu6.jpg' },
-      { name: '酸素カプセル', desc: '月会費内で利用可能。\nコンディショニングや疲労回復に。', image: '/image/zimu8.jpg' },
-      { name: 'セルフエステ', desc: '業務用エステマシンを会員価格で利用可能。', image: '/image/zimu8.jpg' },
-      { name: 'ホワイトニング', desc: 'セルフホワイトニングで輝く白い歯へ。', image: '/image/zimu8.jpg' },
-      { name: 'P・STRETCH', desc: '専門スタッフによるパーソナルストレッチ。', image: '/image/zimu8.jpg' },
+      { name: 'P・SPO SAUNA', desc: '愛媛初の24時間個室サウナ。', image: '/image/整える/sauna6.jpg' },
+      { name: 'SPA P・SPO', desc: '天然温泉で心身の疲れを癒やすリラクゼーション。', image: '/image/整える/sauna1.jpg' },
+      { name: '酸素カプセル', desc: '月会費内で利用可能。\nコンディショニングや疲労回復に。', image: '/image/整える/sanso3.webp' },
+      { name: 'セルフエステ', desc: '業務用エステマシンを会員価格で利用可能。', image: '/image/整える/selfeste.jpg' },
+      { name: '脱毛', desc: 'プロ仕様の脱毛マシンを導入。完全個室で気軽にセルフケアが可能です。', image: '/image/整える/datumou1.jpg' },
+      { name: 'P・STRETCH', desc: '専門スタッフによるパーソナルストレッチ。', image: '/image/整える/stretch1.jpg' },
+      { name: 'あしカラダ', desc: '本格的なリラクゼーションマッサージ。P・SPO会員様は全メニュー500円OFF！', image: '/image/あしカラダ/ashikarada2.jpeg' },
     ]
   },
   {
     id: 'relax',
     title: '遊ぶ・くつろぐ',
-    image: '/image/zimu4.jpg',
+    image: '/image/cafe/cafe1.jpg',
     services: [
-      { name: 'P・SPO CAFE', desc: '会員様はいつでも利用可能。\nフリードリンク付き。', image: '/image/zimu4.jpg' },
-      { name: 'カラオケ', desc: '防音個室で思い切り歌ってストレス発散。', image: '/image/zimu4.jpg' },
-      { name: '食堂', desc: '栄養満点のアスリート向けメニューも提供。', image: '/image/zimu4.jpg' },
-      { name: '酒場', desc: '会員限定。\nドリンクを相場の半額程度で楽しめる。', image: '/image/zimu4.jpg' },
-      { name: 'キッズパーク', desc: '子どもの発育をテーマにした遊び場。', image: '/image/zimu7.jpg' },
-      { name: '古着SHOP', desc: '厳選された古着をお得な価格で販売。', image: '/image/zimu4.jpg' },
-      { name: 'ギャラリー', desc: '地元アーティストの作品を展示・販売。', image: '/image/zimu4.jpg' },
+      { name: 'P・SPO CAFE', desc: '会員様はいつでも利用可能。\nフリードリンク付き。', image: '/image/cafe/cafe4.JPG' },
+      { name: 'カラオケ', desc: '防音個室で思い切り歌ってストレス発散。', image: '/image/karaoke/karaoke1.jpg' },
+      { name: '食堂', desc: '低価格・高品質にこだわったセルフ食堂。トレーニング後の食事にも最適です。', image: '/image/sakaba/udon.webp' },
+      { name: '酒場', desc: '会員限定。\nドリンクを相場の半額程度で楽しめる。', image: '/image/sakaba/sakaba.webp' },
+      { name: 'キッズパーク', desc: '子どもの発育をテーマにした遊び場。', image: '/image/北条店/kidpark1.webp' },
+      { name: '古着SHOP', desc: '厳選された古着をお得な価格で販売。', image: '/image/古着/hurugi.webp' },
+      { name: 'ギャラリー', desc: '地元アーティストの作品を展示・販売。', image: '/image/gallery.webp' },
+      { name: 'ビリヤード・ダーツ', desc: '仕事終わりやトレーニング後に、仲間と楽しく遊べるアミューズメント空間。', image: '/image/ビリヤードダーツ/biri1.webp' },
     ]
   }
 ];
@@ -145,7 +147,7 @@ export const news = [
     date: '2026.05.10',
     category: 'イベント',
     title: 'シミュレーションゴルフコンペ開催！豪華賞品あり',
-    image: '/image/zimu3.jpg',
+    image: '/image/golf/golf3.jpeg',
     period: '開催期間：2026年7月10日（金）〜 7月12日（日）',
   },
   {
@@ -204,6 +206,10 @@ export const features = [
   {
     title: '24時間いつでも使える',
     description: '早朝でも深夜でも、あなたのライフスタイルに合わせて利用できます。'
+  },
+  {
+    title: '手ぶらでOK！顔認証システム',
+    description: '全店舗で顔認証での入退館を導入。スマホやQRコード、会員証すら持たずに完全に手ぶらで利用開始できます。'
   },
   {
     title: '複数サービスが使い放題',
