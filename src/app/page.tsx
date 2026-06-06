@@ -6,7 +6,6 @@ import { Enjoy } from '@/components/sections/Enjoy';
 import { Services } from '@/components/sections/Services';
 import { Features } from '@/components/sections/Features';
 import { Pricing } from '@/components/sections/Pricing';
-import { Options } from '@/components/sections/Options';
 import { Stores } from '@/components/sections/Stores';
 import { JoinFlow } from '@/components/sections/JoinFlow';
 import { FAQ } from '@/components/sections/FAQ';
@@ -34,7 +33,6 @@ export default function Home() {
       
       {/* ⑤料金 (Pricing & Options) */}
       <Pricing />
-      <Options />
       
       {/* ⑥店舗を探す */}
       <Stores />
