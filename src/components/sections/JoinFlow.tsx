@@ -16,7 +16,8 @@ export function JoinFlow() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-black text-brand-navy mb-4">入会までの流れ</h2>
           <p className="text-slate-600 max-w-2xl mx-auto">
-            ご来店不要。スマホひとつで、たったの5分で手続きが完了します。
+            ご来店不要。スマホひとつで手続きが完了します。<br />
+            <span className="text-sm">※未成年者は来店による入会が必要です。</span>
           </p>
         </div>
 
