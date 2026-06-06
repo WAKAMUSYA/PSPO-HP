@@ -2,13 +2,13 @@ import { Hero } from '@/components/sections/Hero';
 import { StickyNav } from '@/components/layout/StickyNav';
 import { News } from '@/components/sections/News';
 import { Concept } from '@/components/sections/Concept';
-import { Enjoy } from '@/components/sections/Enjoy';
 import { Services } from '@/components/sections/Services';
 import { Features } from '@/components/sections/Features';
 import { Pricing } from '@/components/sections/Pricing';
 import { Stores } from '@/components/sections/Stores';
 import { JoinFlow } from '@/components/sections/JoinFlow';
 import { FAQ } from '@/components/sections/FAQ';
+import { Enjoy } from '@/components/sections/Enjoy';
 
 export default function Home() {
   return (
@@ -33,6 +33,8 @@ export default function Home() {
       
       {/* ⑤料金 (Pricing & Options) */}
       <Pricing />
+
+
       
       {/* ⑥店舗を探す */}
       <Stores />
