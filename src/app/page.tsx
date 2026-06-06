@@ -9,8 +9,12 @@ import { Stores } from '@/components/sections/Stores';
 import { JoinFlow } from '@/components/sections/JoinFlow';
 import { FAQ } from '@/components/sections/FAQ';
 import { Enjoy } from '@/components/sections/Enjoy';
+import { getNews } from '@/app/admin/news/actions';
 
-export default function Home() {
+export default async function Home() {
+  const allNews = await getNews();
+  const publishedNews = allNews.filter((n: any) => n.status === 'published');
+
   return (
     <main>
       {/* ①ファーストビュー */}
@@ -19,11 +23,17 @@ export default function Home() {
       {/* スクロール追従メニュー */}
       <StickyNav />
       
-      {/* ②新着・キャンペーン */}
-      <News />
-      
-      {/* ③コンセプト（THIS IS P・SPO） */}
-      <Concept />
+      {/* 固定背景（zimu1.jpg）グループ */}
+      <div 
+        className="relative bg-fixed bg-cover bg-center" 
+        style={{ backgroundImage: "url('/image/zimu1.jpg')" }}
+      >
+        {/* ②新着・キャンペーン */}
+        <News initialNews={publishedNews} />
+        
+        {/* ③コンセプト（THIS IS P・SPO） */}
+        <Concept />
+      </div>
       
       {/* ④P・SPOでできること */}
       <Services />

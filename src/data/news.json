@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "date": "2026.05.20",
+    "category": "キャンペーン",
+    "title": "夏の入会キャンペーン開始！初期費用0円＆初月半額",
+    "image": "/image/news/6gatu.jpg",
+    "period": "開催期間：2026年6月1日（月）〜 7月31日（金）",
+    "status": "published"
+  },
+  {
+    "id": 2,
+    "date": "2026.05.15",
+    "category": "お知らせ",
+    "title": "新店舗「姫原店」が6月5日にグランドオープン",
+    "image": "/image/zimu3.jpg",
+    "period": "開催期間：2026年6月5日（金）〜",
+    "status": "published"
+  },
+  {
+    "id": 3,
+    "date": "2026.05.10",
+    "category": "イベント",
+    "title": "シミュレーションゴルフコンペ開催！豪華賞品あり",
+    "image": "/image/golf/golf3.jpeg",
+    "period": "開催期間：2026年7月10日（金）〜 7月12日（日）",
+    "status": "published"
+  },
+  {
+    "id": 4,
+    "date": "2026.05.01",
+    "category": "キャンペーン",
+    "title": "お友達紹介キャンペーン！紹介者にも特典あり",
+    "image": "/image/zimu4.jpg",
+    "period": "開催期間：2026年5月1日（金）〜 6月30日（火）",
+    "status": "published"
+  },
+  {
+    "id": 5,
+    "date": "2026.04.20",
+    "category": "お知らせ",
+    "title": "カフェメニューに新しいプロテインドリンクを追加",
+    "image": "/image/zimu5.jpg",
+    "period": "提供開始：2026年5月1日（金）〜",
+    "status": "published"
+  }
+]
