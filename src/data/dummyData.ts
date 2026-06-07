@@ -74,12 +74,12 @@ export const serviceTabs = [
     services: [
       { name: '24時間ジム', desc: '低価格なのに充実のラインナップ。\n愛媛県内と北海道1店舗の全店舗が利用可能。', image: '/image/zimu1.jpg' },
       { name: 'シミュレーションゴルフ', desc: '月額内で利用可能。\n導入店舗も続々拡大中。', image: '/image/golf/golf2.jpg' },
-      { name: 'パーソナルトレーニング', desc: 'プロのトレーナーがマンツーマンでサポート。', image: '/image/パーソナル/pt1.jpg' },
+      { name: 'パーソナルトレーニング', desc: 'プロのトレーナーがマンツーマンでサポート（有料）。\n体験＆カウンセリングは3,000円で受講可能です。', image: '/image/パーソナル/pt1.jpg' },
       { name: 'バイオサーキット', desc: 'AIがあなたに最適な負荷を自動設定。', image: '/image/bio/bio.jpg' },
-      { name: 'P・YOGA', desc: '心と身体のバランスを整えるヨガスタジオ。', image: '/image/p-yoga/yoga1.jpg' },
-      { name: 'P・STUDIO', desc: '多彩なスタジオプログラムを毎日開催。', image: '/image/p-studio/studio1.jpg' },
-      { name: 'マシンピラティス', desc: '専用マシンでインナーマッスルを効果的に鍛える。', image: '/image/マシンピラティス/pira1.JPG' },
-      { name: 'ボルダリング', desc: '初心者から上級者まで楽しめる本格ウォール。', image: '/image/ボルダリング/boru1.jpg' },
+      { name: 'P・YOGA', desc: '心と身体のバランスを整えるヨガスタジオ。\n毎月10枚の予約チケットが付与されます（繰越不可）。', image: '/image/p-yoga/yoga1.jpg' },
+      { name: 'P・STUDIO', desc: '多彩なスタジオプログラムを毎日開催。\n毎月10枚の予約チケットが付与されます（繰越不可）。', image: '/image/p-studio/studio1.jpg' },
+      { name: 'マシンピラティス', desc: '湊町2号店では有料レッスンを、土橋店では無料でセルフ利用が可能なピラティスマシンを完備。', image: '/image/マシンピラティス/pira1.JPG' },
+      { name: 'ボルダリング', desc: '初心者から上級者まで楽しめる本格ウォール。\n月会費内で利用でき、チョークやシューズのレンタルも無料です。', image: '/image/ボルダリング/boru1.jpg' },
     ]
   },
   {
@@ -110,7 +110,7 @@ export const serviceTabs = [
   },
   {
     id: 'relax',
-    title: '遊ぶ・くつろぐ',
+    title: '楽しむ・くつろぐ',
     image: '/image/cafe/cafe1.jpg',
     services: [
       { name: 'P・SPO CAFE', desc: '会員様はいつでも利用可能。\nフリードリンク付き。', image: '/image/cafe/cafe4.JPG' },

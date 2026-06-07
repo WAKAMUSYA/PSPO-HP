@@ -2,6 +2,7 @@
 import React, { useRef } from 'react';
 import { serviceTabs } from '../../data/dummyData';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 
 const sectionConfig: Record<string, any> = {
@@ -136,12 +137,12 @@ function CategorySection({ category, index }: { category: typeof serviceTabs[0],
           </div>
 
           <div className={`w-full md:w-1/3 flex flex-col justify-center ${isEven ? 'items-start md:pl-4' : 'items-end md:pr-4'}`}>
-            <button className={`inline-flex items-center px-8 py-3 rounded-none border-2 ${conf.buttonClass} transition-all duration-300 font-bold group shadow-sm hover:shadow-md mt-4 md:mt-0`} style={{ transform: 'skewX(-5deg)' }}>
+            <Link href={`/services/${category.id}`} className={`inline-flex items-center px-8 py-3 rounded-none border-2 ${conf.buttonClass} transition-all duration-300 font-bold group shadow-sm hover:shadow-md mt-4 md:mt-0`} style={{ transform: 'skewX(-5deg)' }}>
               <span style={{ transform: 'skewX(5deg)' }} className="flex items-center">
-                {category.title}施設一覧
+                {category.title}詳細を見る
                 <ChevronRight size={20} className="ml-1 group-hover:translate-x-1 transition-transform" />
               </span>
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -153,9 +154,9 @@ function CategorySection({ category, index }: { category: typeof serviceTabs[0],
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {category.services.map((service, idx) => (
-              <a
+              <Link
                 key={idx}
-                href="#"
+                href={`/services/${category.id}`}
                 className={`flex-shrink-0 w-[150px] sm:w-[200px] md:w-[320px] snap-start flex flex-col rounded-xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden ${conf.cardBg}`}
               >
                 {/* Image */}
@@ -182,7 +183,7 @@ function CategorySection({ category, index }: { category: typeof serviceTabs[0],
                     詳しくはこちら <ChevronRight size={14} className="ml-1 md:w-4 md:h-4" />
                   </div>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
 
