@@ -48,6 +48,7 @@ export function Footer() {
             <ul className="space-y-3 text-blue-200 text-sm">
               <li><a href="#pricing" className="hover:text-white transition-colors">料金プラン</a></li>
               <li><a href="#stores" className="hover:text-white transition-colors">店舗を探す</a></li>
+              <li><Link href="/stores-test" className="hover:text-white transition-colors text-brand-orange">店舗マップ（テスト版）</Link></li>
               <li><a href="#faq" className="hover:text-white transition-colors">よくある質問</a></li>
               <li><a href="#" className="hover:text-white transition-colors">お知らせ</a></li>
             </ul>

@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import { serviceTabs } from '../../data/dummyData';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ChevronLeft } from 'lucide-react';
 
 const sectionConfig: Record<string, any> = {
   exercise: {
@@ -61,6 +61,12 @@ function CategorySection({ category, index }: { category: typeof serviceTabs[0],
   const scrollRight = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({ left: 320, behavior: 'smooth' });
+    }
+  };
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -320, behavior: 'smooth' });
     }
   };
 
@@ -139,7 +145,7 @@ function CategorySection({ category, index }: { category: typeof serviceTabs[0],
           <div className={`w-full md:w-1/3 flex flex-col justify-center ${isEven ? 'items-start md:pl-4' : 'items-end md:pr-4'}`}>
             <Link href={`/services/${category.id}`} className={`inline-flex items-center px-8 py-3 rounded-none border-2 ${conf.buttonClass} transition-all duration-300 font-bold group shadow-sm hover:shadow-md mt-4 md:mt-0`} style={{ transform: 'skewX(-5deg)' }}>
               <span style={{ transform: 'skewX(5deg)' }} className="flex items-center">
-                {category.title}詳細を見る
+                詳細を見る
                 <ChevronRight size={20} className="ml-1 group-hover:translate-x-1 transition-transform" />
               </span>
             </Link>
@@ -150,8 +156,7 @@ function CategorySection({ category, index }: { category: typeof serviceTabs[0],
         <div className="relative group/carousel mt-8">
           <div
             ref={scrollRef}
-            className="flex overflow-x-auto space-x-3 md:space-x-6 pb-8 snap-x snap-mandatory hide-scrollbar pl-4 md:pl-0"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            className="flex overflow-x-auto space-x-3 md:space-x-6 pb-6 snap-x snap-mandatory custom-scrollbar pl-4 md:pl-0"
           >
             {category.services.map((service, idx) => (
               <Link
@@ -187,6 +192,15 @@ function CategorySection({ category, index }: { category: typeof serviceTabs[0],
             ))}
           </div>
 
+          {/* Left Scroll Arrow */}
+          <button
+            onClick={scrollLeft}
+            className={`hidden md:flex opacity-0 group-hover/carousel:opacity-100 absolute -left-6 top-[40%] -translate-y-1/2 w-14 h-14 bg-white border border-slate-200 text-slate-600 hover:text-brand-navy hover:border-brand-navy rounded-full items-center justify-center shadow-xl transition-all hover:scale-105 z-10 focus:outline-none`}
+            aria-label="Previous items"
+          >
+            <ChevronLeft size={28} />
+          </button>
+
           {/* Right Scroll Arrow */}
           <button
             onClick={scrollRight}
@@ -212,8 +226,19 @@ export function Services() {
 
       <style dangerouslySetInnerHTML={{
         __html: `
-        .hide-scrollbar::-webkit-scrollbar {
-          display: none;
+        .custom-scrollbar::-webkit-scrollbar {
+          height: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.05);
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(0, 0, 0, 0.3);
         }
       `}} />
     </section>
